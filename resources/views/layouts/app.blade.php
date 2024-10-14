@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <link href="{{ asset('css/maspos-styles.css') }}" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'Your App Name')</title>
@@ -16,7 +17,7 @@
             {{ $slot }}
         </main>
 
-        <livewire:components.footer />
+        
     </div>
 
     @livewireScripts

@@ -17,7 +17,8 @@ class UserSeeder extends Seeder
             [
                 'name' => 'Admin Test',
                 'email' => 'admin@admin.com',
-                'password' => bcrypt('password123')
+                'password' => bcrypt('password123'),
+                'email_verified_at' => now(),
             ],
         ];
         foreach($users as $user){
@@ -25,7 +26,8 @@ class UserSeeder extends Seeder
                 'email' => $user['email']
             ],[
                 'password' => $user['password'],
-                'name' => $user['name']
+                'name' => $user['name'],
+                'email_verified_at' => $user['email_verified_at'],
             ]);
         }
     }

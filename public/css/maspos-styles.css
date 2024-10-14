@@ -1,0 +1,94 @@
+.row.flex-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 16px; /* Mengatur jarak antar kartu */
+    overflow-x: auto; /* Scroll horizontal untuk kartu */
+    padding-bottom: 10px; /* Tambahkan padding bawah agar tidak terpotong */
+}
+
+.row.flex-row .col-12 {
+    flex: 0 0 250px; /* Tetapkan lebar konsisten untuk setiap kartu */
+}
+
+.product-card {
+    min-width: 200px; /* Lebar minimum */
+    max-width: 200px; /* Lebar maksimum agar semua kartu konsisten */
+    min-height: 300px; /* Tentukan tinggi minimum untuk konsistensi */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align:left; /* Tengah semua konten */
+    display: flex;
+    flex-direction: column; /* Pastikan elemen di dalam kartu berbaris vertikal */
+}
+
+.product-card .card-img-top {
+    height: 200px;
+    width: 100%;
+    object-fit: cover; /* Agar gambar sesuai dengan ukuran tanpa distorsi */
+    border-bottom: 1px solid #eaeaea; /* Tambahkan garis bawah untuk pemisah */
+}
+
+.product-card .card-body {
+    padding: 20px;
+    flex-grow: 1; /* Memastikan card-body mengisi ruang yang tersisa */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ruang antar konten dalam body */
+}
+
+.product-card .card-title {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.product-card .price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.product-card .add-to-cart-btn {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #007bff; /* Warna biru seperti di gambar */
+    border-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: auto; 
+}
+
+.overflow-auto {
+    overflow-x: auto; 
+    padding-bottom: 10px; 
+}
+
+
+
+.container {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.btn-primary{
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #007bff; 
+    border-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: right;
+    align-items: center mb-4;
+    margin-bottom: 12px;
+}

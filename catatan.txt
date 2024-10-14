@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-end mt-4"> 
+            <button class="btn btn-primary">Total Bill: Rp. {{ number_format($products->sum('price'), 0, ',', '.') }}</button>
+        </div> 
+
+                        <button class="btn btn-light me-2">+ Add Category</button>
+                <button class="btn btn-light me-2">+ Add Products</button>
