@@ -14,9 +14,6 @@ use App\Http\Controllers\OrderController;
 
 Route::get('/cart', CartComponent::class)->name('cart.index');
 Route::get('/', Home::class)->name('home');
-Route::get('/', function () {
-    return redirect('/dashboard/login');
-});
 Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 Route::get('/about', About::class)->name('about');
 Route::get('/contact', Contact::class)->name('contact');
