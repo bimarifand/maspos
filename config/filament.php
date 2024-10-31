@@ -14,8 +14,8 @@ return [
     |
     */
 
-    'auth' => [
-        'redirect' => '/', 
+    'redirect' => [
+        'login' => '/', 
     ],
 
 
