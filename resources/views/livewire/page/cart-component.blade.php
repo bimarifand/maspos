@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center justify-center h-screen">
+<div class="flex flex-col items-center justify-center h-screen ">
     @if(session()->has('success'))
         <div class="bg-white p-6 rounded-lg shadow-md text-center">
             <h2 class="text-2xl font-bold mb-2">Payment Successful</h2>

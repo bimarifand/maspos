@@ -1,13 +1,16 @@
 <?php
 
+use Livewire\Livewire;
 use App\Models\Product;
-use App\Livewire\Page\CheckoutComponent;
 use App\Livewire\Page\Home;
 use App\Livewire\Page\About;
 use App\Livewire\Page\Contact;
 use App\Livewire\Page\CartComponent;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
+use App\Livewire\Page\CheckoutComponent;
 use App\Http\Controllers\OrderController;
+
 
 Route::get('/cart', CartComponent::class)->name('cart.index');
 Route::get('/', Home::class)->name('home');

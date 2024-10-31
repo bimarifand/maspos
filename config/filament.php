@@ -14,6 +14,11 @@ return [
     |
     */
 
+    'auth' => [
+        'redirect' => '/', 
+    ],
+
+
     'broadcasting' => [
 
         // 'echo' => [

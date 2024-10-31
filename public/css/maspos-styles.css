@@ -54,7 +54,7 @@
 .product-card .add-to-cart-btn {
     font-size: 12px;
     font-weight: bold;
-    background-color: #007bff; /* Warna biru seperti di gambar */
+    background-color: #007bff;
     border-color: #007bff;
     color: white;
     padding: 10px 20px;
@@ -84,6 +84,24 @@
     padding: 10px 20px;
     border-radius: 5px;
     margin-top: auto;
+}
+
+.btn-second{
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #B3D4FF99; 
+    border-color: #007bff;
+    color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: auto;
+}
+
+.total-bill{
+    display: flex;
+    justify-content: right;
+    align-items: center mb-4;
+    margin-bottom: 12px;
 }
 
 .header {

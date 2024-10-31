@@ -32,7 +32,6 @@ class OrderResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ]);
     }
@@ -41,7 +40,6 @@ class OrderResource extends Resource
     {
         return [
             'index' => Pages\ListOrders::route('/'),
-            'edit' => Pages\EditOrder::route('/{record}/edit'),
         ];
     }
 }

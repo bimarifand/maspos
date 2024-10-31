@@ -1,8 +1,9 @@
 <div>
-
     <div class="container mt-4">
         <div class="header">
             <div>
+                <a href="/dashboard/categories/create"><button class="btn btn-second">Add Category</button></a>
+                <a href="/dashboard/products/create"><button class="btn btn-second">Add Product</button></a>
                 <a href="/cart"><button class="btn btn-primary">Cart</button></a>
             </div>
         </div>
@@ -12,7 +13,6 @@
                 @foreach($products as $product)
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                     <div class="card product-card">
-                        <!-- Menggunakan asset() untuk memastikan URL foto benar -->
                         <img src="{{ asset('storage/' . $product->photo) }}" class="card-img-top" alt="{{ $product->name }}">
                         <button class="btn btn-danger btn-sm delete-btn"></button>
                         <div class="card-body">
@@ -26,6 +26,10 @@
             </div>
         </div>
 
-        
+        <hr>
+
+        <div class="total-bill">
+            <a href="/cart"><button class="btn btn-primary">Total Bill: Rp. {{ number_format($total, 0, ',', '.') }}</button></a>
+        </div>
     </div>
 </div>

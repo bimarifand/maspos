@@ -5,15 +5,16 @@ namespace App\Livewire\Page;
 use App\Models\Cart;
 use App\Models\Product;
 use Livewire\Component;
-use Illuminate\Support\Facades\Log;
 
 class Home extends Component
 {
     public $products;
+    public $total = 0;
 
     public function mount()
     {
         $this->products = Product::all();
+        $this->calculateTotal(); // Hitung total saat pertama kali halaman dimuat
     }
 
     public function render()
@@ -26,13 +27,13 @@ class Home extends Component
     {
         $product = Product::findOrFail($productId);
         $cartItem = Cart::where('user_id', auth()->id())
-                    ->where('product_id', $productId)
-                    ->first();
+                        ->where('product_id', $productId)
+                        ->first();
 
         if ($cartItem) {
-        $cartItem->quantity += 1;
-        $cartItem->save();
-            } else {
+            $cartItem->quantity += 1;
+            $cartItem->save();
+        } else {
             Cart::create([
                 'user_id' => auth()->id(),
                 'product_id' => $productId,
@@ -40,6 +41,17 @@ class Home extends Component
             ]);
         }       
 
+        $this->calculateTotal(); // Hitung ulang total setelah menambahkan item ke cart
         $this->dispatch('cartUpdated')->to('page.cart-component');
-}
+    }
+
+    public function calculateTotal()
+    {
+        $this->total = Cart::with('product')
+            ->where('user_id', auth()->id())
+            ->get()
+            ->sum(function($item) {
+                return $item->quantity * $item->product->price;
+            });
+    }
 }
