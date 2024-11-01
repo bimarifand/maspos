@@ -1,13 +1,13 @@
 .row.flex-row {
     display: flex;
     flex-wrap: nowrap;
-    gap: 0; /* Mengatur jarak antar kartu */
-    overflow-x: auto; /* Scroll horizontal untuk kartu */
-    padding-bottom: 10px; /* Tambahkan padding bawah agar tidak terpotong */
+    gap: 0; 
+    overflow-x: auto; 
+    padding-bottom: 10px; 
 }
 
 .row.flex-row .col-12 {
-    flex: 0 0 250px; /* Tetapkan lebar konsisten untuk setiap kartu */
+    flex: 0 0 250px; 
 }
 
 .product-card {

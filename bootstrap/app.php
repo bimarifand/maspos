@@ -11,7 +11,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias([
+            'redirect.if.not.loggedin' => \App\Http\Middleware\RedirectIfNotLoggedIn::class
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
