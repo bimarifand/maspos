@@ -4,23 +4,44 @@ namespace App\Livewire\Page;
 
 use App\Models\Cart;
 use App\Models\Product;
+use App\Models\Category;
 use Livewire\Component;
 
 class Home extends Component
 {
     public $products;
     public $total = 0;
+    public $categories;
+    public $selectedCategory = null;
 
     public function mount()
     {
-        $this->products = Product::all();
-        $this->calculateTotal(); // Hitung total saat pertama kali halaman dimuat
+        $this->categories = Category::all();
+        $this->loadProducts();
+        $this->calculateTotal();
     }
 
     public function render()
     {
         return view('livewire.page.home')
             ->layout('layouts.app');
+    }
+
+    public function loadProducts()
+    {
+        $query = Product::query();
+        
+        if ($this->selectedCategory) {
+            $query->where('category_id', $this->selectedCategory);
+        }
+        
+        $this->products = $query->get();
+    }
+
+    public function filterCategory($categoryId = null)
+    {
+        $this->selectedCategory = $categoryId;
+        $this->loadProducts();
     }
 
     public function addToCart($productId)
@@ -41,7 +62,7 @@ class Home extends Component
             ]);
         }       
 
-        $this->calculateTotal(); // Hitung ulang total setelah menambahkan item ke cart
+        $this->calculateTotal();
         $this->dispatch('cartUpdated')->to('page.cart-component');
     }
 
