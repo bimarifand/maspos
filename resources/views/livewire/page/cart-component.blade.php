@@ -1,13 +1,4 @@
 <div class="flex flex-col min-h-screen bg-gray-50">
-    <!-- Header -->
-    <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-        <div class="font-bold text-lg">MASPOS</div>
-        <div class="flex items-center gap-2">
-            <span>Admin</span>
-            <div class="w-8 h-8 bg-white/20 rounded-full"></div>
-        </div>
-    </div>
-
     <div class="flex flex-col items-center justify-center flex-grow p-6">
         @if(session()->has('success'))
             <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-md w-full">
